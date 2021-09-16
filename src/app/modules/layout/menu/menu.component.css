@@ -1,0 +1,9 @@
+.sidebar{
+    width: 285px;
+    height: 100vh;
+    background-color:khaki;
+}
+
+.sidebar__button--background{
+    background-color: inherit;
+}
