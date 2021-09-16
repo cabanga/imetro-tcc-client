@@ -1,9 +1,14 @@
-.sidebar{
-    width: 285px;
-    height: 100vh;
-    background-color:khaki;
+.sidebar {
+    --sidebar--color: #434343;
 }
 
-.sidebar__button--background{
+.sidebar {
+    width: 285px;
+    height: 100vh;
+    background-color: var(--sidebar--color);
+    float: left;
+}
+
+.sidebar__button--background {
     background-color: inherit;
 }
