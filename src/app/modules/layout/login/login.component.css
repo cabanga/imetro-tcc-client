@@ -51,6 +51,6 @@ form {
 }
 
 .image {
-    background-image: url("../../../../assets/img/img/bw_landing.png");
+    background-image: url("../../../../assets/img/bw_landing.png");
     background-size: cover;
 }

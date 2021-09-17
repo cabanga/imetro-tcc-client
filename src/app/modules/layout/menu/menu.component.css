@@ -1,14 +1,12 @@
 .sidebar {
-    --sidebar--color: #434343;
-}
-
-.sidebar {
-    width: 285px;
     height: 100vh;
     background-color: var(--sidebar--color);
-    float: left;
 }
 
 .sidebar__button--background {
     background-color: inherit;
+}
+
+li.mb-1 {
+    width: inherit;
 }
