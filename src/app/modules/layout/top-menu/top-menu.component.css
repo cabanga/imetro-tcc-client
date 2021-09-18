@@ -1,32 +1,39 @@
-.topmenu {
-    background-color: #434432;
-    width: 100%;
-}
-
 .top {
     display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 
-.menu__name {
-    background-color: #9da327;
-    margin-left: 0.5px;
-    width: inherit;
+.topmenu {
+    background-color: #434432;
 }
 
 .user__info {
     display: flex;
-    margin-left: 120px;
-}
-
-.user--name {
-    margin-top: 4px;
+    flex-direction: row;
 }
 
 .user--icon {
-    margin-top: 4px;
-    margin-right: 30px;
+    margin: 8px 8px;
+}
+
+.user--name {
+    margin: 10px 8px;
 }
 
 .arrow--icon {
-    margin-left: 30px;
+    margin: 8px 18px;
+}
+
+.menu__name {
+    background-color: #9da327;
+    background-size: contain;
+}
+
+.menu__name--width {
+    font-weight: bold;
+    margin: 0;
+    font-size: 18px;
+    height: 35px;
+    margin: 0 20px;
 }
