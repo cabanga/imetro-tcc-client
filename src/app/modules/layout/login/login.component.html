@@ -8,14 +8,23 @@
             </div>
 
             <div class="form container-sm">
-                <form class="">
+                <form class="" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                     <div class="mb-3 container--form">
                         <label for="InputEmail" class="form-label">Email :</label>
-                        <input type="email" class="form-control login__form--input" id="InputEmail" placeholder="Digite o seu email">
+                        <input type="email" class="form-control login__form--input" id="InputEmail" formControlName="email" placeholder="Digite o seu email">
+                        <div class="text-danger" *ngIf="this.loginForm.get('email')?.errors?.required && (this.loginForm.get('email')?.dirty || this.loginForm.get('email')?.touched)">
+                            Email is required.
+                        </div>
+                        <div class="text-danger" *ngIf="this.loginForm.get('email')?.errors?.email && (this.loginForm.get('email')?.dirty || this.loginForm.get('email')?.touched)">
+                            <p>Email no formato invalido</p>
+                        </div>
                     </div>
                     <div class="mb-3 container--form">
                         <label for="InputPassword " class="form-label">Password :</label>
-                        <input type="password" class="form-control login__form--input" id="InputPassword" placeholder="Digite o sua password">
+                        <input type="password" class="form-control login__form--input" id="InputPassword" formControlName="senha" placeholder="Digite o sua password">
+                        <div class="text-danger" *ngIf="this.loginForm.get('senha')?.errors?.required && (this.loginForm.get('senha')?.dirty || this.loginForm.get('senha')?.touched)">
+                            Senha is required.
+                        </div>
                     </div>
                     <div class="mb-3 form-check container--form">
                         <input type="checkbox" class="form-check-input " id="Check">
@@ -33,6 +42,7 @@
                     <p>2020-2021 UNIG© | Todos os Direitos Reservados</p>
                 </div>
             </div>
+
 
         </section>
 
