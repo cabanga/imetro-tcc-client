@@ -1,0 +1,51 @@
+<div class="main-content">
+    <div class="header py-7 py-lg-5 pt-lg-9 header-login">
+        <div class="container">
+          <div class="header-body text-center mb-7">
+                <div class="row justify-content-center">
+                    <div class="col-xl-5 col-lg-6 col-md-8 px-5">
+                        <h1 class="text-white"></h1>
+                    </div>
+                </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="container mt--8 pb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-sm-12">
+                <div class="card bg-dark border-0 mb-0">
+                    <div class="card-body px-lg-5 py-lg-5">
+
+                        <div class="form-group mb-3">
+                            <div class="input-group input-group-merge input-group-alternative">
+                                <input [(ngModel)]="user.cell_phone" class="form-control" name="cell_phone" id="cell_phone" placeholder="digite o seu nº telefone" type="number">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group input-group-merge input-group-alternative">
+                                <input [(ngModel)]="user.password" class="form-control" name="password" id="password" placeholder="*************" type="password">
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="form-group">
+                            <div class="input-group input-group-merge input-group-alternative">
+                                <input [(ngModel)]="user.password_confirmation" class="form-control" name="password_confirmation" id="password" placeholder="*************" type="password">
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button (click)="_signUp()" type="submit" class="btn btn-primary my-4 btn-block">Registar agora</button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
