@@ -1,6 +1,6 @@
 {
-  "name": "portal-web",
-  "version": "0.0.0",
+  "name": "dione-doc",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
