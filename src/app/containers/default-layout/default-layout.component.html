@@ -1,5 +1,12 @@
-<app-sidebar></app-sidebar>
 <div class="main-content" id="panel" style="margin-left: 250px!important;">
     <app-navbar-side></app-navbar-side>
-    <router-outlet></router-outlet>
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+        <router-outlet></router-outlet>
+    </main>
+</div>
+
+<div class="fixed-plugin">
+    <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+    <i class="material-icons py-2">settings</i>
+    </a>
 </div>
