@@ -8,9 +8,9 @@ import { AuthService } from '../auth.service';
 })
 export class RegisterComponent implements OnInit {
     user: any = {
+        name: null,
         cell_phone: null,
         password: null,
-        password_confirmation: null
     }
 
     constructor(
