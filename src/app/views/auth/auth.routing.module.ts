@@ -10,7 +10,7 @@ const routes: Routes = [
         component: RegisterComponent
     },
     {
-        path: 'registar-utilizador',
+        path: 'registar-nova-conta',
         component: RegisterComponent
     },
     {
