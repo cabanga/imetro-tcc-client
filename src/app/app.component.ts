@@ -15,8 +15,6 @@ export class AppComponent {
         private router: Router
     ){
 		if ( this.isLoggedIn ) {
-            console.log( this.isLoggedIn )
-
 			this.router.navigateByUrl('/dashboard')
 		}
     }

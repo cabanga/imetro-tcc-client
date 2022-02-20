@@ -31,10 +31,10 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <form role="form" class="text-start">
+                            <div class="text-start">
                                 <div class="input-group input-group-outline my-3">
                                     <label class="form-label">Email</label>
-                                    <input [(ngModel)]="user.cell_phone" type="email" class="form-control" />
+                                    <input [(ngModel)]="user.email" type="email" class="form-control" />
                                 </div>
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="form-label">Senha</label>
@@ -51,7 +51,7 @@
                                     Ainda não têm uma conta?
                                     <a routerLink="/auth/registar-nova-conta" class="text-primary text-gradient font-weight-bold">Criar conta</a>
                                 </p>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -26,13 +26,13 @@ export class AuthService {
     
     signIn(user: any){
         this._http_client.post<any>(
-            `${environment.baseURL}/users/sign_in`, 
+            `${environment.baseURL}/auth/login`, 
             user
         ).subscribe(
             response => {
-                let token = response.data.token
-                sessionStorage.setItem('sessionToken', token);
-                sessionStorage.setItem('currentUser', JSON.stringify(response.data.user) );
+                let user = response                
+                sessionStorage.setItem('sessionToken', user.uid);
+                sessionStorage.setItem('currentUser', JSON.stringify(user) );
 
                 this.userLogged = true
                 this.showLayoutEmitter.emit(true)
@@ -53,18 +53,19 @@ export class AuthService {
 
     signUp(user: any){
         this._http_client.post<any>(
-            `${environment.baseURL}/users`, 
+            `${environment.baseURL}/auth/register`, 
             user
         ).subscribe(
             response => {
-                let token = response.data.authentication_token
-                sessionStorage.setItem('sessionToken', token);
+                let user = response
+                sessionStorage.setItem('sessionToken', user.uid);
+                sessionStorage.setItem('currentUser', JSON.stringify(user) );
 
                 this.userLogged = true
                 this.showLayoutEmitter.emit(true)
                 
-                this._applicationService.SwalSuccess('Registo realizado com sucesso')
-                this.router.navigateByUrl(`/auth/update-account/${response.data.id}`)
+                this._applicationService.SwalSuccess('Sessão iniciada com sucesso')
+                this.router.navigateByUrl('/dashboard')
             },
             (error) => {
                 if (!error.ok) {

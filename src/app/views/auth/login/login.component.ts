@@ -9,7 +9,7 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
     user: any = {
-        cell_phone: null,
+        email: null,
         password: null
     }
 
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     }
 
     _signIn(){
-        if (this.user.cell_phone == null) {
+        if (this.user.email == null) {
             this._applicationService.SwalDanger("O campo E-mail é obrigatório")
             return
         }
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
             return
         }
 
-        this._authService.signIn({user: this.user})
+        this._authService.signIn(this.user)
     }
 
 }
