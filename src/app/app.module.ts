@@ -11,7 +11,7 @@ import { NotFoundComponentComponent } from './views/layout/not-found-component/n
 import { AppComponent } from './app.component'
 import { DefaultLayoutComponent } from './containers'
 import { NavbarSideComponent } from './containers/default-layout/navbar-side/navbar-side.component';
-import { SidebarComponent } from './containers/default-layout/sidebar/sidebar.component'
+import { SidebarComponent } from './containers/default-layout/sidebar/sidebar.component';
 
 
 
@@ -26,7 +26,7 @@ const APP_CONTAINERS = [
         NavbarSideComponent,
         SidebarComponent,
         NotFoundComponentComponent,
-        
+       
     ],
     imports: [
         HttpClientModule,
