@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http'
 import { Router } from '@angular/router';
 
 import Swal  from 'sweetalert2'
@@ -60,7 +60,41 @@ export class ApplicationService {
             cancelButtonColor: '#d33',
             confirmButtonText: 'Confirmar'
         })
-        
+    }
+
+
+
+    SwalConfirmationUpload(){
+        Swal.fire({
+            title: 'Tens certeza?',
+            text: "Confirmação do processamento do documento",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+            }
+        })
+    }
+
+    postFile(fileToUpload: File, url: string) {
+        const formData: FormData = new FormData()
+        formData.append('file', fileToUpload, fileToUpload.name)
+
+        const request = new HttpRequest(
+            'POST',
+            url,
+            formData
+        )
+
+        return this._http_client.request(request)
     }
 
 
