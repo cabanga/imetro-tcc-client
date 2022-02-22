@@ -78,7 +78,33 @@
         </div>
     </div>
 
+    <br>
+    <br>
+
+    <input 
+        (change)="fileUploadInAngular($event)" 
+        class="file-input" 
+        type="file" 
+        accept="image/*" 
+        #fileUpload 
+    >
+
     
 </div>
 
 
+<div class="fixed-plugin">
+   
+    <button (click)="fileUpload.click()" type="button" class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+        <i class="material-icons py-2" style="font-size: 80px;">add</i>
+    </button>
+</div>
+
+
+
+<style>
+
+.file-input {
+    display: none;
+}
+</style>

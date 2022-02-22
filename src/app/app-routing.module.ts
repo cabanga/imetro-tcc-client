@@ -20,11 +20,7 @@ export const routes: Routes = [
             {
                 path: 'dashboard',
                 loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule)
-            },
-            {
-                path: 'collaborators',
-                loadChildren: () => import('./views/request/requests.module').then(m => m.RequestsModule)
-            },
+            }
         ]
         
     },
