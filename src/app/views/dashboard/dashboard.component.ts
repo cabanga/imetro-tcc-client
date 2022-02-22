@@ -6,21 +6,9 @@ import { Component, OnInit } from '@angular/core';
 
 export class DashboardComponent implements OnInit {
 
-    fileToUpload: File | null = null;
-
     ngOnInit(): void {
     
     }
-
-
-    fileUploadInAngular(target: any) {
-        console.log( target )
-        
-        
-        //this.fileToUpload = files.item(0);
-    }
-
-
 
 
 
