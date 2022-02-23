@@ -78,7 +78,7 @@ export class ApplicationService {
 
     postFile(fileToUpload: File, url: string) {
         const formData: FormData = new FormData()
-        formData.append('file', fileToUpload, fileToUpload.name)
+        formData.append('document', fileToUpload, fileToUpload.name)
 
         const request = new HttpRequest(
             'POST',

@@ -1,8 +1,13 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-  "compileOnSave": false,
-  "compilerOptions": {
+    "compileOnSave": false,
+    "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+            "crypto": [
+            "node_modules/crypto"
+        ]
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -17,15 +22,15 @@
     "target": "es2017",
     "module": "es2020",
     "lib": [
-      "es2018",
-      "dom"
-    ]
-  },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true,
-    "allowSyntheticDefaultImports": true
-  }
+            "es2018",
+            "dom"
+        ]
+    },
+    "angularCompilerOptions": {
+        "enableI18nLegacyMessageIdFormat": false,
+        "strictInjectionParameters": true,
+        "strictInputAccessModifiers": true,
+        "strictTemplates": true,
+        "allowSyntheticDefaultImports": true
+    }
 }
