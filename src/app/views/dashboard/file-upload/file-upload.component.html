@@ -1,9 +1,11 @@
-<input 
-    (change)="fileUploadInAngular($event.target)" 
-    class="file-input" 
-    type="file" 
-    #fileUpload 
->
+<form enctype="multipart/form-data" >
+    <input 
+        (change)="fileUploadInAngular($event.target)" 
+        class="file-input" 
+        type="file" 
+        #fileUpload 
+    >
+</form>
 
 <div class="fixed-plugin">
     <button (click)="fileUpload.click()" type="button" class="fixed-plugin-button text-dark position-fixed px-3 py-2">

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ApplicationService } from 'src/app/api/application.service';
 import { environment } from './../../../../environments/environment';
 import { Component, OnInit } from '@angular/core';
@@ -14,6 +15,7 @@ export class FileUploadComponent implements OnInit {
     fileToUpload: File | null = null;
 
     constructor(
+        private router: Router,
         private _applicationService: ApplicationService
     ) { }
 
@@ -34,17 +36,22 @@ export class FileUploadComponent implements OnInit {
 
     _confirmationUpload(){
         if (this.fileToUpload && this.fileToUpload.size > 0) {
-            let url = `http://localhost:3333/api/file/upload_document`
+            let url = `${environment.baseURL}/file/upload_document`
 
             this._applicationService.postFile(this.fileToUpload, url)
             .subscribe( response => {
-                console.log( response)
+                let result = Object(response).body
+                this._save_info_document(result)
                 this._applicationService.SwalSuccess('Ficheiro carregado com sucesso')
             }, error => {
                 console.log(error)
             })
         }
-        
+    }
+
+    _save_info_document(data: any){
+        sessionStorage.setItem('current_document', JSON.stringify(data))
+        this.router.navigateByUrl('/dashboard/payment')
     }
 
 }
