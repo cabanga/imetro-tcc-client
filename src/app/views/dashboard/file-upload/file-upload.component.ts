@@ -23,6 +23,12 @@ export class FileUploadComponent implements OnInit {
     fileUploadInAngular(target: any) {
         this.fileToUpload = target.files.item(0)
         this._applicationService.SwalConfirmationUpload()
+        .then((result) => {
+            if (result.isConfirmed) {
+                //==== TODO Confirmação do Backend para criar buscar o Hash
+                this._confirmationUpload()
+            }
+        })
     }
 
     _confirmationUpload(){
@@ -36,6 +42,7 @@ export class FileUploadComponent implements OnInit {
                 console.log(error)
             })
         }
+        
     }
 
 }
