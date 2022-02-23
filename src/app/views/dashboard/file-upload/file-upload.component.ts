@@ -2,6 +2,9 @@ import { ApplicationService } from 'src/app/api/application.service';
 import { environment } from './../../../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 
+import * as hasha from 'hasha';
+
+
 @Component({
     selector: 'app-file-upload',
     templateUrl: './file-upload.component.html',
@@ -26,7 +29,12 @@ export class FileUploadComponent implements OnInit {
         .then((result) => {
             if (result.isConfirmed) {
                 //==== TODO Confirmação do Backend para criar buscar o Hash
-                this._confirmationUpload()
+                //this._confirmationUpload()
+                
+                let filepath = './loadingFile/certificado-tcc-Imetro.pdf'
+                const hash_file = hasha.fromFileSync(filepath, {algorithm: 'sha256'});
+                
+                console.log( hash_file )
             }
         })
     }
