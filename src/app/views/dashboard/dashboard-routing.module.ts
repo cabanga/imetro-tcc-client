@@ -13,7 +13,7 @@ const routes: Routes = [
     }
   },
   {
-    path: '/payment',
+    path: 'payment',
     component: PaymentComponent,
     data: {
       title: 'Pagamento'

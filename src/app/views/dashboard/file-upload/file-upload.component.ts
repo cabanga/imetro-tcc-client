@@ -32,6 +32,7 @@ export class FileUploadComponent implements OnInit {
                 this._confirmationUpload()
             }
         })
+        
     }
 
     _confirmationUpload(){

@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-payment',
-  templateUrl: './payment.component.html',
-  styleUrls: ['./payment.component.scss']
+    selector: 'app-payment',
+    templateUrl: './payment.component.html',
+    styleUrls: ['./payment.component.scss']
 })
+
 export class PaymentComponent implements OnInit {
 
-  constructor() { }
+    current_document: any
 
-  ngOnInit(): void {
-  }
+    constructor() { }
+
+    ngOnInit(): void {
+        this.get_document_info()
+
+    }
+
+    public get_document_info(){
+        let storage_info : any = sessionStorage.getItem('current_document')
+        this.current_document = JSON.parse(storage_info)
+    }
 
 }

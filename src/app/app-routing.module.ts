@@ -22,7 +22,6 @@ export const routes: Routes = [
                 loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule)
             }
         ]
-        
     },
     {
         path: '**', 
