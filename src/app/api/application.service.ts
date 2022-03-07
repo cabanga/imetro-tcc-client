@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http'
 import { Router } from '@angular/router';
@@ -97,6 +98,10 @@ export class ApplicationService {
             formData
         )
         return this._http_client.request(request)
+    }
+
+    insert_to_blockchain(info_doc: any){
+        this._http_client.post<any>(`${environment.baseURL}/create_transation`, info_doc)
     }
 
 }

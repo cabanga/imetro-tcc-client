@@ -25,6 +25,7 @@ export class PaymentComponent implements OnInit {
         .then((result) => {
             if (result.isConfirmed) {
                 // =============== INSERT IN BLOCKCHAIN =======
+                
             }
         })
     }

@@ -89,7 +89,7 @@ export class AuthService {
         sessionStorage.removeItem('sessionToken')
         this.userLogged = false
         this.showLayoutEmitter.emit(false)
-        //this.router.navigateByUrl('/')
+        this.router.navigateByUrl('/auth/login')
     }
 
 }
