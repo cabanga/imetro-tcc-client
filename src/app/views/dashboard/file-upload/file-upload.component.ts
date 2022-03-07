@@ -1,8 +1,7 @@
 import { Router } from '@angular/router';
-import { ApplicationService } from 'src/app/api/application.service';
-import { environment } from './../../../../environments/environment';
-import { Component, OnInit } from '@angular/core';
-
+import { ApplicationService } from 'src/app/api/application.service'
+import { environment } from './../../../../environments/environment'
+import { Component, OnInit } from '@angular/core'
 
 @Component({
     selector: 'app-file-upload',
@@ -11,8 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class FileUploadComponent implements OnInit {
-
-    fileToUpload: File | null = null;
+    fileToUpload: File | null = null
 
     constructor(
         private router: Router,
@@ -23,8 +21,9 @@ export class FileUploadComponent implements OnInit {
 
     }
 
-    fileUploadInAngular(target: any) {
-        this.fileToUpload = target.files.item(0)
+    async fileUploadInAngular(event: any) {
+        this.fileToUpload = event.target.files.item(0)
+       
         this._applicationService.SwalConfirmationUpload()
         .then((result) => {
             if (result.isConfirmed) {
@@ -32,7 +31,6 @@ export class FileUploadComponent implements OnInit {
                 this._confirmationUpload()
             }
         })
-        
     }
 
     _confirmationUpload(){
@@ -42,11 +40,16 @@ export class FileUploadComponent implements OnInit {
             this._applicationService.postFile(this.fileToUpload, url)
             .subscribe( response => {
                 let result = Object(response).body
-                this._save_info_document(result)
+
+                if (Boolean( result )) {
+                    this._save_info_document(result)
+                }
+
                 this._applicationService.SwalSuccess('Ficheiro carregado com sucesso')
             }, error => {
                 console.log(error)
             })
+            
         }
     }
 

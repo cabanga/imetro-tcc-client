@@ -1,3 +1,4 @@
+import { ApplicationService } from 'src/app/api/application.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,11 +11,22 @@ export class PaymentComponent implements OnInit {
 
     current_document: any
 
-    constructor() { }
+    constructor(
+        private _applicationService: ApplicationService
+    ) { }
 
     ngOnInit(): void {
         this.get_document_info()
 
+    }
+
+    _confirmationPayment(){
+        this._applicationService.SwalConfirmationPayment()
+        .then((result) => {
+            if (result.isConfirmed) {
+                // =============== INSERT IN BLOCKCHAIN =======
+            }
+        })
     }
 
     public get_document_info(){

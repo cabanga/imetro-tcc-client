@@ -62,7 +62,19 @@ export class ApplicationService {
         })
     }
 
-
+    SwalConfirmationPayment(){
+        return Swal.fire({
+            title: '1.500 AOA',
+            text: "Confirmação do Pagamento",
+            imageUrl: 'https://play-lh.googleusercontent.com/qU0CpVCHvC01MJIxtvfv3kB3iYxsUrYCmnzoz62bD5p55uc8sOnfsOy_iDKqJ2Ybow',
+            imageWidth: 400,
+            imageHeight: 400,
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sim, confirmar!'
+        })
+    }
 
     SwalConfirmationUpload(){
         return Swal.fire({
@@ -79,16 +91,12 @@ export class ApplicationService {
     postFile(fileToUpload: File, url: string) {
         const formData: FormData = new FormData()
         formData.append('document', fileToUpload, fileToUpload.name)
-
         const request = new HttpRequest(
             'POST',
             url,
             formData
         )
-
         return this._http_client.request(request)
     }
-
-
 
 }
